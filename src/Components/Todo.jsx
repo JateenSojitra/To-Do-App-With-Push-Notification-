@@ -4,10 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 const Todo = () => {
 
     const [items, setItems] = useState(tododata);
-    const [selectedItem, setSelectedItem] = useState(null);
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    console.log('selectedItem :>> ', selectedItem);
+    const [selectedItem, setSelectedItem] = useState(null)
 
     const openModal = (item) => {
         setSelectedItem(item);
@@ -21,16 +18,8 @@ const Todo = () => {
     const renderToDoCards = () => {
         return items?.map(data => {
             return <motion.div layout={data.id} onClick={() => openModal(data)} className='row card-list'>
-                <motion.div className='co-12 justify-content-center cards'
-                //  whileHover={{ scale: 0.7, rotate: 360 }}
-                //  whileTap={{
-                //    scale: 0.8,
-                //    rotate: -90,
-                //    borderRadius: "100%"
-                //  }}
-                 >
+                <motion.div className='co-12 justify-content-center cards'>
                     <motion.div className='d-flex justify-content-between'>
-                        {/* <motion.div className='row'> */}
                         <div>
                             <motion.span>{data.name}</motion.span>
                             <motion.span>{data.id}</motion.span>
@@ -39,7 +28,6 @@ const Todo = () => {
                             <span class="material-symbols-outlined">delete_forever</span>
                             <span class="material-symbols-outlined">edit</span>
                         </div>
-                        {/* </motion.div> */}
                     </motion.div>
                 </motion.div>
             </motion.div>
